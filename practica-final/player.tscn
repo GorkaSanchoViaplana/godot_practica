@@ -138,7 +138,7 @@ shape = SubResource("RectangleShape2D_fbflx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vwyct")
 animation = &"fall"
-frame_progress = 0.0552348
+frame_progress = 0.34927
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
