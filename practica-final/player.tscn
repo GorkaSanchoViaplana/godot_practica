@@ -141,5 +141,6 @@ animation = &"fall"
 frame_progress = 0.00923091
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
