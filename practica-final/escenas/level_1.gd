@@ -1,4 +1,4 @@
-class_name projectil extends RigidBody2D
+extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -10,4 +10,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-# func aplica
+func _on_atac_timeout() -> void:
+	$dimoni.disparar($player)

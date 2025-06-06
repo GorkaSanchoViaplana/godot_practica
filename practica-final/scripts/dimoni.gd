@@ -1,5 +1,10 @@
 extends "res://scripts/enemic.gd"
 
+@export var foc: PackedScene
+# var jug: Node2D
+var velAtac: float = 400.0
+
+
 func _physics_process(delta: float) -> void:
 	if not es_viu:
 		return
@@ -7,3 +12,17 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	sprites.play("caminar")
 	# sprites.fip_h = direccio < 0
+	
+
+func disparar(jug: CharacterBody2D):
+	if jug == null:
+		return
+	else:
+		var atac = foc.instantiate()
+		var direccio = (jug.global_position - global_position).normalized()
+		atac.global_position = global_position
+		atac.linear_velocity = direccio * velAtac 
+
+		print("A")
+
+		get_tree().current_scene.add_child(atac)
