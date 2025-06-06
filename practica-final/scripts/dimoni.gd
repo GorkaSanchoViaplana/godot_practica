@@ -1,4 +1,4 @@
-extends "res://enemic.gd"
+extends "res://scripts/enemic.gd"
 
 func _physics_process(delta: float) -> void:
 	if not es_viu:
