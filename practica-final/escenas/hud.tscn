@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbv2nybbfoorg"]
+
+[ext_resource type="Script" path="res://escenas/hud.gd" id="1_6h8rt"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_6h8rt")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="vidasLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 80.0
+offset_bottom = 23.0
+scale = Vector2(1.72295, 1.72295)
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]

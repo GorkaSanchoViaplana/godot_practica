@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bykhk0847eon3"]
+
+[ext_resource type="Script" path="res://enemic.gd" id="1_hj7rm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yabee"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tga2u"]
+
+[node name="enemic" type="CharacterBody2D"]
+script = ExtResource("1_hj7rm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yabee")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_tga2u")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

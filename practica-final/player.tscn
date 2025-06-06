@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cic4ufau485n7"]
+[gd_scene load_steps=40 format=3 uid="uid://cic4ufau485n7"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_o74oo"]
 [ext_resource type="Texture2D" uid="uid://igy86mmvkjic" path="res://assets/01 - Main Character/pngs/Hobbit - Idle1.png" id="2_mk0au"]
@@ -15,16 +15,28 @@
 [ext_resource type="Texture2D" uid="uid://cj4f3fmvxv5s7" path="res://assets/01 - Main Character/pngs/Hobbit - jumpt8.png" id="13_1rvqq"]
 [ext_resource type="Texture2D" uid="uid://gn4dpb1yjwgg" path="res://assets/01 - Main Character/pngs/Hobbit - jumpt9.png" id="14_i3q6m"]
 [ext_resource type="Texture2D" uid="uid://x1vqkys2dat0" path="res://assets/01 - Main Character/pngs/Hobbit - jumpt10.png" id="15_na2ar"]
+[ext_resource type="Texture2D" uid="uid://661wugha1rjk" path="res://assets/01 - Main Character/pngs/Hobbit - death1.png" id="16_q2ocn"]
 [ext_resource type="Texture2D" uid="uid://dqhlxyoqj3ru8" path="res://assets/01 - Main Character/pngs/Hobbit - run1.png" id="16_y2cp3"]
 [ext_resource type="Texture2D" uid="uid://cxwrgpyne51d2" path="res://assets/01 - Main Character/pngs/Hobbit - run2.png" id="17_1m0r4"]
+[ext_resource type="Texture2D" uid="uid://xfytc8scltwc" path="res://assets/01 - Main Character/pngs/Hobbit - death2.png" id="17_m5spv"]
+[ext_resource type="Texture2D" uid="uid://bgatoriguga4v" path="res://assets/01 - Main Character/pngs/Hobbit - death3.png" id="18_g3l6s"]
 [ext_resource type="Texture2D" uid="uid://dcw3cf65q37qn" path="res://assets/01 - Main Character/pngs/Hobbit - run3.png" id="18_noyhr"]
+[ext_resource type="Texture2D" uid="uid://jf3k6f75ajnq" path="res://assets/01 - Main Character/pngs/Hobbit - death4.png" id="19_2mn5f"]
 [ext_resource type="Texture2D" uid="uid://bcllp5ff8olpf" path="res://assets/01 - Main Character/pngs/Hobbit - run4.png" id="19_qbx2o"]
+[ext_resource type="Texture2D" uid="uid://bpvh6s1rokkj1" path="res://assets/01 - Main Character/pngs/Hobbit - death5.png" id="20_jkh8g"]
 [ext_resource type="Texture2D" uid="uid://woc647iybr4t" path="res://assets/01 - Main Character/pngs/Hobbit - run5.png" id="20_qfidf"]
+[ext_resource type="Texture2D" uid="uid://bbecrtd4ljwhi" path="res://assets/01 - Main Character/pngs/Hobbit - death6.png" id="21_ft6n5"]
 [ext_resource type="Texture2D" uid="uid://bc0mn3bvjx5o1" path="res://assets/01 - Main Character/pngs/Hobbit - run6.png" id="21_sp72o"]
 [ext_resource type="Texture2D" uid="uid://iymu7jq02kx4" path="res://assets/01 - Main Character/pngs/Hobbit - run7.png" id="22_34j26"]
+[ext_resource type="Texture2D" uid="uid://ca1w53anrsdss" path="res://assets/01 - Main Character/pngs/Hobbit - death7.png" id="22_v5hjr"]
+[ext_resource type="Texture2D" uid="uid://bs2gdstiv84sg" path="res://assets/01 - Main Character/pngs/Hobbit - death8.png" id="23_3ebij"]
 [ext_resource type="Texture2D" uid="uid://ldhso8x77vcj" path="res://assets/01 - Main Character/pngs/Hobbit - run8.png" id="23_b47a8"]
 [ext_resource type="Texture2D" uid="uid://25r81lsoxsjc" path="res://assets/01 - Main Character/pngs/Hobbit - run9.png" id="24_fsup2"]
+[ext_resource type="Texture2D" uid="uid://cdk4k84717a4h" path="res://assets/01 - Main Character/pngs/Hobbit - death9.png" id="24_qelhk"]
 [ext_resource type="Texture2D" uid="uid://uwog673t7rtl" path="res://assets/01 - Main Character/pngs/Hobbit - run10.png" id="25_4soyp"]
+[ext_resource type="Texture2D" uid="uid://dyopuqjv4a7q1" path="res://assets/01 - Main Character/pngs/Hobbit - death10.png" id="25_j6b0f"]
+[ext_resource type="Texture2D" uid="uid://dybp83iij71ud" path="res://assets/01 - Main Character/pngs/Hobbit - death11.png" id="26_qytlw"]
+[ext_resource type="Texture2D" uid="uid://ba4ud43vdm6fv" path="res://assets/01 - Main Character/pngs/Hobbit - death12.png" id="27_3qoau"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbflx"]
 size = Vector2(13, 17)
@@ -93,6 +105,47 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("16_q2ocn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_m5spv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_g3l6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_2mn5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_jkh8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ft6n5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_v5hjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_3ebij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_qelhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_j6b0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_qytlw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_3qoau")
+}],
+"loop": true,
+"name": &"mor",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("16_y2cp3")
 }, {
 "duration": 1.0,
@@ -137,10 +190,18 @@ shape = SubResource("RectangleShape2D_fbflx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vwyct")
-animation = &"fall"
-frame_progress = 0.00923091
+animation = &"mor"
+frame_progress = 0.310595
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.5, 2.5)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -1.5)
+scale = Vector2(1, 1.02176)
+shape = SubResource("RectangleShape2D_fbflx")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
