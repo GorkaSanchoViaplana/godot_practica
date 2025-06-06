@@ -8,10 +8,10 @@ var velAtac: float = 400.0
 func _physics_process(delta: float) -> void:
 	if not es_viu:
 		return
-	velocity.x = direccio * SPEED
+	#velocity.x = direccio * SPEED
 	move_and_slide()
 	sprites.play("caminar")
-	# sprites.fip_h = direccio < 0
+	sprites.flip_h = direccio < 0
 	
 
 func disparar(jug: CharacterBody2D):

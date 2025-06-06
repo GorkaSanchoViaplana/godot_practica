@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/projectil.gd" id="1_8iwd4"]
 [ext_resource type="Texture2D" uid="uid://80euo61dxjhe" path="res://assets/projectile.png" id="2_6f50t"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sw5ou"]
-size = Vector2(36, 21)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylafj"]
+size = Vector2(38, 22)
 
 [node name="projectil" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -13,6 +13,10 @@ script = ExtResource("1_8iwd4")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_6f50t")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_sw5ou")
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ylafj")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

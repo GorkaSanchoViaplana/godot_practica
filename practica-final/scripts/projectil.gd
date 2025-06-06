@@ -10,4 +10,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-# func aplica
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is not enemic:
+		if body.has_method("morir"):
+			body.morir()
+		queue_free()
