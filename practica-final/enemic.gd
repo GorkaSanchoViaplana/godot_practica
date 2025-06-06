@@ -11,7 +11,7 @@ func _physics_process(delta: float) -> void:
 	velocity.x = direccio * SPEED
 	move_and_slide()
 	sprites.play("caminar")
-	sprites.fip_h = direccio < 0
+	sprites.flip_h = direccio < 0
 	
 
 func morir():

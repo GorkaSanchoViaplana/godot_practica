@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cmd6u1fmoa4qo"]
+[gd_scene load_steps=21 format=3 uid="uid://trf7grxp0awp"]
 
 [ext_resource type="PackedScene" uid="uid://bykhk0847eon3" path="res://escenas/enemic.tscn" id="1_pv17t"]
 [ext_resource type="Script" path="res://dimoni.gd" id="2_yr0qp"]
