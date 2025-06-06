@@ -188,6 +188,7 @@ animations = [{
 [node name="enemic" instance=ExtResource("1_pv17t")]
 script = ExtResource("2_yr0qp")
 foc = ExtResource("3_4weog")
+velocitat = 100
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_mvcp0")

@@ -33,7 +33,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func morir():
-	print("NO PUC MES")
 	viu = false
 	sprites.play("mor")
 	await sprites.animation_finished
