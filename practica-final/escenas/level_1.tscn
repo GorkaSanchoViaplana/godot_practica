@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://5hdvns0rumh0"]
+[gd_scene load_steps=6 format=3 uid="uid://5hdvns0rumh0"]
 
 [ext_resource type="Texture2D" uid="uid://ottg5kjds4vx" path="res://Four Seasons Platformer Tileset [16x16][FREE] - RottingPixels/four-seasons-tileset.png" id="1_517bo"]
+[ext_resource type="PackedScene" uid="uid://cmd6u1fmoa4qo" path="res://escenas/dimoni.tscn" id="1_ka4dd"]
 [ext_resource type="PackedScene" uid="uid://cic4ufau485n7" path="res://player.tscn" id="2_o2x0u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mig55"]
@@ -153,6 +154,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_mig55")
 
 [node name="Level1" type="Node2D"]
+
+[node name="dimoni" parent="." instance=ExtResource("1_ka4dd")]
+position = Vector2(1074, 511)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_0o7kr")
