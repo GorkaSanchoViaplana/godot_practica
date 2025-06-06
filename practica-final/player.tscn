@@ -191,7 +191,7 @@ shape = SubResource("RectangleShape2D_fbflx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vwyct")
 animation = &"mor"
-frame_progress = 0.310595
+frame_progress = 0.370445
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
