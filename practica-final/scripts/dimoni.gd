@@ -21,4 +21,5 @@ func disparar(jug: CharacterBody2D):
 		var direccio = (jug.global_position - global_position).normalized()
 		atac.global_position = global_position
 		atac.linear_velocity = direccio * velAtac 
+		atac.rotation = direccio.angle() + 135 # així va bé cap al personatge
 		get_tree().current_scene.add_child(atac)

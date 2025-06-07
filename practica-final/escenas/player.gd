@@ -62,6 +62,7 @@ func atacar() -> void:
 		var direccio = (posRatoli - global_position).normalized()
 		atac.global_position = global_position
 		atac.linear_velocity = direccio * velAtac1 
+		atac.rotation = direccio.angle()
 		potAtacar1 = false
 		$tempsAtac1.start()
 		
