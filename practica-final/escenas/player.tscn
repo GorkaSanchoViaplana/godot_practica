@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://cic4ufau485n7"]
+[gd_scene load_steps=72 format=3 uid="uid://cic4ufau485n7"]
 
 [ext_resource type="Script" path="res://escenas/player.gd" id="1_6u430"]
 [ext_resource type="Texture2D" uid="uid://ctknw6qfk4xf" path="res://assets/01 - Main Character/pngs/Hobbit - attack1.png" id="2_di6go"]
@@ -55,6 +55,19 @@
 [ext_resource type="Texture2D" uid="uid://dyopuqjv4a7q1" path="res://assets/01 - Main Character/pngs/Hobbit - death10.png" id="25_j6b0f"]
 [ext_resource type="Texture2D" uid="uid://dybp83iij71ud" path="res://assets/01 - Main Character/pngs/Hobbit - death11.png" id="26_qytlw"]
 [ext_resource type="Texture2D" uid="uid://ba4ud43vdm6fv" path="res://assets/01 - Main Character/pngs/Hobbit - death12.png" id="27_3qoau"]
+[ext_resource type="Texture2D" uid="uid://74ih5svh001x" path="res://assets/01 - Main Character/pngs/Hobbit - block1.png" id="34_5poeh"]
+[ext_resource type="Texture2D" uid="uid://bj4je2pqf5l0c" path="res://assets/01 - Main Character/pngs/Hobbit - block2.png" id="35_er171"]
+[ext_resource type="Texture2D" uid="uid://tf1byuffuol3" path="res://assets/01 - Main Character/pngs/Hobbit - block3.png" id="36_4yri7"]
+[ext_resource type="Texture2D" uid="uid://i0ilcgpk0rya" path="res://assets/01 - Main Character/pngs/Hobbit - block4.png" id="37_nje4x"]
+[ext_resource type="Texture2D" uid="uid://dqaomc11o3wv2" path="res://assets/01 - Main Character/pngs/Hobbit - block5.png" id="38_t3myb"]
+[ext_resource type="Texture2D" uid="uid://hty7i1t44kis" path="res://assets/01 - Main Character/pngs/Hobbit - block6.png" id="39_70sx1"]
+[ext_resource type="Texture2D" uid="uid://dwouxvsg2w3p5" path="res://assets/01 - Main Character/pngs/Hobbit - block7.png" id="40_4govw"]
+[ext_resource type="Texture2D" uid="uid://cpfx6b16bjfns" path="res://assets/01 - Main Character/pngs/Hobbit - block8.png" id="41_1ubbi"]
+[ext_resource type="Texture2D" uid="uid://du2qswb0t8e1o" path="res://assets/01 - Main Character/pngs/Hobbit - block9.png" id="42_mogpc"]
+[ext_resource type="Texture2D" uid="uid://drmeaou0gty8y" path="res://assets/01 - Main Character/pngs/Hobbit - block10.png" id="43_fahwc"]
+[ext_resource type="Texture2D" uid="uid://c8npwiytn4ion" path="res://assets/01 - Main Character/pngs/Hobbit - block11.png" id="44_b6nb5"]
+[ext_resource type="Texture2D" uid="uid://twduem77nvmv" path="res://assets/01 - Main Character/pngs/Hobbit - block12.png" id="45_neq5t"]
+[ext_resource type="Texture2D" uid="uid://d1v821wv3rbag" path="res://assets/01 - Main Character/pngs/Hobbit - block13.png" id="46_18mav"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbflx"]
 size = Vector2(15, 18.5954)
@@ -113,9 +126,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("18_d6q8d")
 }],
-"loop": true,
+"loop": false,
 "name": &"atac",
-"speed": 5.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -179,6 +192,50 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("34_5poeh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_er171")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_4yri7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_nje4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_t3myb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_70sx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_4govw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_1ubbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_mogpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_fahwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_b6nb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_neq5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_18mav")
+}],
+"loop": false,
+"name": &"melee",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("16_q2ocn")
 }, {
 "duration": 1.0,
@@ -214,7 +271,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("27_3qoau")
 }],
-"loop": true,
+"loop": false,
 "name": &"mor",
 "speed": 11.0
 }, {
@@ -254,6 +311,9 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arrll"]
+size = Vector2(29, 26)
+
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_6u430")
 fletxa = ExtResource("2_rqovd")
@@ -265,7 +325,7 @@ shape = SubResource("RectangleShape2D_fbflx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vwyct")
-animation = &"atac"
+animation = &"melee"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
@@ -275,4 +335,21 @@ zoom = Vector2(2.5, 2.5)
 [node name="tempsAtac1" type="Timer" parent="."]
 one_shot = true
 
+[node name="tempsAtac2" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="duracioAtac2" type="Timer" parent="."]
+one_shot = true
+
+[node name="atacMelee" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="atacMelee"]
+position = Vector2(4.5, -3)
+shape = SubResource("RectangleShape2D_arrll")
+
 [connection signal="timeout" from="tempsAtac1" to="." method="_on_temps_atac_1_timeout"]
+[connection signal="timeout" from="tempsAtac2" to="." method="_on_temps_atac_2_timeout"]
+[connection signal="timeout" from="duracioAtac2" to="." method="_on_duracio_atac_2_timeout"]
+[connection signal="body_entered" from="atacMelee" to="." method="_on_atac_melee_body_entered"]

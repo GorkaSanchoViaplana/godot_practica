@@ -190,6 +190,9 @@ script = ExtResource("2_yr0qp")
 foc = ExtResource("3_4weog")
 velocitat = 100
 
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-2, 1)
+
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_mvcp0")
-animation = &"morir"
+animation = &"caminar"
