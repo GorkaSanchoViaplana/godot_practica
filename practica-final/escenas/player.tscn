@@ -1,24 +1,42 @@
-[gd_scene load_steps=40 format=3 uid="uid://cic4ufau485n7"]
+[gd_scene load_steps=58 format=3 uid="uid://cic4ufau485n7"]
 
 [ext_resource type="Script" path="res://escenas/player.gd" id="1_6u430"]
+[ext_resource type="Texture2D" uid="uid://ctknw6qfk4xf" path="res://assets/01 - Main Character/pngs/Hobbit - attack1.png" id="2_di6go"]
 [ext_resource type="Texture2D" uid="uid://igy86mmvkjic" path="res://assets/01 - Main Character/pngs/Hobbit - Idle1.png" id="2_mk0au"]
+[ext_resource type="PackedScene" uid="uid://bug7divobjb83" path="res://escenas/projectil_jug.tscn" id="2_rqovd"]
 [ext_resource type="Texture2D" uid="uid://dagq4de88pqyk" path="res://assets/01 - Main Character/pngs/Hobbit - Idle2.png" id="3_sieuw"]
+[ext_resource type="Texture2D" uid="uid://b8wbja5v811y3" path="res://assets/01 - Main Character/pngs/Hobbit - attack2.png" id="3_u021b"]
 [ext_resource type="Texture2D" uid="uid://dqvbmi6cewft1" path="res://assets/01 - Main Character/pngs/Hobbit - Idle3.png" id="4_8a66c"]
+[ext_resource type="Texture2D" uid="uid://c00sgvjoa8t16" path="res://assets/01 - Main Character/pngs/Hobbit - attack3.png" id="4_cs4j2"]
+[ext_resource type="Texture2D" uid="uid://xsmba2228liu" path="res://assets/01 - Main Character/pngs/Hobbit - attack4.png" id="5_l2be5"]
 [ext_resource type="Texture2D" uid="uid://yqhs8niv6yqx" path="res://assets/01 - Main Character/pngs/Hobbit - Idle4.png" id="5_sm1s1"]
 [ext_resource type="Texture2D" uid="uid://bcdgsirbo7sek" path="res://assets/01 - Main Character/pngs/Hobbit - jumpt1.png" id="6_6l5kq"]
+[ext_resource type="Texture2D" uid="uid://ducgins5yc3x6" path="res://assets/01 - Main Character/pngs/Hobbit - attack5.png" id="6_pr0km"]
+[ext_resource type="Texture2D" uid="uid://vwvs4ebpkld7" path="res://assets/01 - Main Character/pngs/Hobbit - attack6.png" id="7_f8rwe"]
 [ext_resource type="Texture2D" uid="uid://php6q2btyi71" path="res://assets/01 - Main Character/pngs/Hobbit - jumpt2.png" id="7_o6f53"]
+[ext_resource type="Texture2D" uid="uid://ce3khwbpak3eg" path="res://assets/01 - Main Character/pngs/Hobbit - attack7.png" id="8_fitef"]
 [ext_resource type="Texture2D" uid="uid://b4x56271aerbb" path="res://assets/01 - Main Character/pngs/Hobbit - jumpt3.png" id="8_ixrxw"]
+[ext_resource type="Texture2D" uid="uid://bt08tvwgxjmk4" path="res://assets/01 - Main Character/pngs/Hobbit - attack8.png" id="9_231wq"]
 [ext_resource type="Texture2D" uid="uid://bpdmlsair77dj" path="res://assets/01 - Main Character/pngs/Hobbit - jumpt4.png" id="9_ys24t"]
+[ext_resource type="Texture2D" uid="uid://b256i5gcstfmy" path="res://assets/01 - Main Character/pngs/Hobbit - attack9.png" id="10_ca6ou"]
 [ext_resource type="Texture2D" uid="uid://qjoy6susbk4a" path="res://assets/01 - Main Character/pngs/Hobbit - jumpt5.png" id="10_kt4qw"]
 [ext_resource type="Texture2D" uid="uid://cfu0d0klrg41g" path="res://assets/01 - Main Character/pngs/Hobbit - jumpt6.png" id="11_1gbep"]
+[ext_resource type="Texture2D" uid="uid://f2jl3j0wy7jf" path="res://assets/01 - Main Character/pngs/Hobbit - attack10.png" id="11_2ey3e"]
 [ext_resource type="Texture2D" uid="uid://bre6xrkq87f35" path="res://assets/01 - Main Character/pngs/Hobbit - jumpt7.png" id="12_6qheb"]
+[ext_resource type="Texture2D" uid="uid://b6x0f7khl8xjy" path="res://assets/01 - Main Character/pngs/Hobbit - attack11.png" id="12_wkr8c"]
 [ext_resource type="Texture2D" uid="uid://cj4f3fmvxv5s7" path="res://assets/01 - Main Character/pngs/Hobbit - jumpt8.png" id="13_1rvqq"]
+[ext_resource type="Texture2D" uid="uid://bxcskxubx2rx4" path="res://assets/01 - Main Character/pngs/Hobbit - attack12.png" id="13_qexm8"]
+[ext_resource type="Texture2D" uid="uid://bag1p5grmiajw" path="res://assets/01 - Main Character/pngs/Hobbit - attack13.png" id="14_4waf6"]
 [ext_resource type="Texture2D" uid="uid://gn4dpb1yjwgg" path="res://assets/01 - Main Character/pngs/Hobbit - jumpt9.png" id="14_i3q6m"]
+[ext_resource type="Texture2D" uid="uid://dtu4jv6mljiqv" path="res://assets/01 - Main Character/pngs/Hobbit - attack14.png" id="15_6so65"]
 [ext_resource type="Texture2D" uid="uid://x1vqkys2dat0" path="res://assets/01 - Main Character/pngs/Hobbit - jumpt10.png" id="15_na2ar"]
 [ext_resource type="Texture2D" uid="uid://661wugha1rjk" path="res://assets/01 - Main Character/pngs/Hobbit - death1.png" id="16_q2ocn"]
 [ext_resource type="Texture2D" uid="uid://dqhlxyoqj3ru8" path="res://assets/01 - Main Character/pngs/Hobbit - run1.png" id="16_y2cp3"]
+[ext_resource type="Texture2D" uid="uid://d0tarqbtambow" path="res://assets/01 - Main Character/pngs/Hobbit - attack15.png" id="16_y447w"]
 [ext_resource type="Texture2D" uid="uid://cxwrgpyne51d2" path="res://assets/01 - Main Character/pngs/Hobbit - run2.png" id="17_1m0r4"]
 [ext_resource type="Texture2D" uid="uid://xfytc8scltwc" path="res://assets/01 - Main Character/pngs/Hobbit - death2.png" id="17_m5spv"]
+[ext_resource type="Texture2D" uid="uid://u8uijhbv3hhp" path="res://assets/01 - Main Character/pngs/Hobbit - attack16.png" id="17_vj2nj"]
+[ext_resource type="Texture2D" uid="uid://dddm0arxmox1q" path="res://assets/01 - Main Character/pngs/Hobbit - attack17.png" id="18_d6q8d"]
 [ext_resource type="Texture2D" uid="uid://bgatoriguga4v" path="res://assets/01 - Main Character/pngs/Hobbit - death3.png" id="18_g3l6s"]
 [ext_resource type="Texture2D" uid="uid://dcw3cf65q37qn" path="res://assets/01 - Main Character/pngs/Hobbit - run3.png" id="18_noyhr"]
 [ext_resource type="Texture2D" uid="uid://jf3k6f75ajnq" path="res://assets/01 - Main Character/pngs/Hobbit - death4.png" id="19_2mn5f"]
@@ -43,6 +61,62 @@ size = Vector2(15, 18.5954)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vwyct"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_di6go")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_u021b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cs4j2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l2be5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pr0km")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_f8rwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fitef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_231wq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ca6ou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2ey3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wkr8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_qexm8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4waf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_6so65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_y447w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vj2nj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_d6q8d")
+}],
+"loop": true,
+"name": &"atac",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("10_kt4qw")
@@ -182,6 +256,7 @@ animations = [{
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_6u430")
+fletxa = ExtResource("2_rqovd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -1.5)
@@ -190,9 +265,14 @@ shape = SubResource("RectangleShape2D_fbflx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vwyct")
-animation = &"mor"
+animation = &"atac"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="tempsAtac1" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="tempsAtac1" to="." method="_on_temps_atac_1_timeout"]

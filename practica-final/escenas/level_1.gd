@@ -8,7 +8,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	path_follow_1.progress += dimoni_1.velocitat * delta
+	if is_instance_valid(dimoni_1):
+		path_follow_1.progress += dimoni_1.velocitat * delta
 
 func _on_atac_timeout() -> void:
 	dimoni_1.disparar($player)

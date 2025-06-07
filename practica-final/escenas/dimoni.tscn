@@ -180,9 +180,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rahcs")
 }],
-"loop": true,
+"loop": false,
 "name": &"morir",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [node name="enemic" instance=ExtResource("1_pv17t")]
@@ -192,4 +192,4 @@ velocitat = 100
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_mvcp0")
-animation = &"atacar"
+animation = &"morir"
