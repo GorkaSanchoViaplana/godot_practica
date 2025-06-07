@@ -1,0 +1,99 @@
+[gd_scene load_steps=15 format=3 uid="uid://lnc24iolj8im"]
+
+[ext_resource type="PackedScene" uid="uid://bykhk0847eon3" path="res://escenas/enemic.tscn" id="1_6rscm"]
+[ext_resource type="Script" path="res://escenas/fantasma.gd" id="2_1ib4p"]
+[ext_resource type="Texture2D" uid="uid://de6x32chtydxq" path="res://assets/03 - Fantasma.png" id="2_qgc7l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pprja"]
+atlas = ExtResource("2_qgc7l")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbcfp"]
+atlas = ExtResource("2_qgc7l")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1dwt"]
+atlas = ExtResource("2_qgc7l")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irrtn"]
+atlas = ExtResource("2_qgc7l")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4oxs"]
+atlas = ExtResource("2_qgc7l")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pluo"]
+atlas = ExtResource("2_qgc7l")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twoji"]
+atlas = ExtResource("2_qgc7l")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shhvf"]
+atlas = ExtResource("2_qgc7l")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afwne"]
+atlas = ExtResource("2_qgc7l")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbu4q"]
+atlas = ExtResource("2_qgc7l")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_651wc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pprja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbcfp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1dwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irrtn")
+}],
+"loop": true,
+"name": &"caminar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4oxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pluo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twoji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shhvf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afwne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbu4q")
+}],
+"loop": false,
+"name": &"morir",
+"speed": 5.0
+}]
+
+[node name="Fantasma" instance=ExtResource("1_6rscm")]
+script = ExtResource("2_1ib4p")
+velocitat = 300
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0.5, 1)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_651wc")
+animation = &"caminar"

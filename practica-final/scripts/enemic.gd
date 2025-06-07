@@ -16,6 +16,7 @@ func _physics_process(delta: float) -> void:
 	
 
 func morir():
+	print("OOF")
 	es_viu = false;
 	sprites.play("morir")
 	await sprites.animation_finished
@@ -24,4 +25,5 @@ func morir():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass
+	if body is player and has_method("morir"):
+		body.morir()
