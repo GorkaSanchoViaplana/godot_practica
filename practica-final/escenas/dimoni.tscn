@@ -188,7 +188,6 @@ animations = [{
 [node name="enemic" instance=ExtResource("1_pv17t")]
 script = ExtResource("2_yr0qp")
 foc = ExtResource("3_4weog")
-velocitat = 100
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(-2, 1)
