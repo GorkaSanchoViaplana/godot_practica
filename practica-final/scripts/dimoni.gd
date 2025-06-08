@@ -1,7 +1,7 @@
 extends "res://scripts/enemic.gd"
 
 @export var foc: PackedScene
-@export var velocitat = 100
+
 # var jug: Node2D
 var velAtac: float = 400.0
 

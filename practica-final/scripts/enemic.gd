@@ -1,5 +1,6 @@
 class_name enemic extends CharacterBody2D
 @onready var sprites = $AnimatedSprite2D
+@export var velocitat = 100
 
 const SPEED = 150.0
 var direccio := -1 
@@ -25,5 +26,5 @@ func morir():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is player and has_method("morir"):
+	if body is player and has_method("morir") and es_viu:
 		body.morir()

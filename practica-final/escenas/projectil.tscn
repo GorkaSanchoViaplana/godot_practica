@@ -19,4 +19,9 @@ texture = ExtResource("2_6f50t")
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_ylafj")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-4.76837e-07, 1)
+scale = Vector2(1.9, 1.1)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
