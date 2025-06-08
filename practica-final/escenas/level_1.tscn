@@ -1,11 +1,20 @@
-[gd_scene load_steps=11 format=3 uid="uid://5hdvns0rumh0"]
+[gd_scene load_steps=20 format=3 uid="uid://5hdvns0rumh0"]
 
 [ext_resource type="Texture2D" uid="uid://ottg5kjds4vx" path="res://Four Seasons Platformer Tileset [16x16][FREE] - RottingPixels/four-seasons-tileset.png" id="1_517bo"]
 [ext_resource type="Script" path="res://escenas/level_1.gd" id="1_dbjcl"]
 [ext_resource type="PackedScene" uid="uid://trf7grxp0awp" path="res://escenas/dimoni.tscn" id="1_ka4dd"]
 [ext_resource type="PackedScene" uid="uid://cic4ufau485n7" path="res://escenas/player.tscn" id="2_o2x0u"]
 [ext_resource type="PackedScene" uid="uid://lnc24iolj8im" path="res://escenas/fantasma.tscn" id="2_pnteg"]
+[ext_resource type="PackedScene" uid="uid://b6ofomjbbunw" path="res://escenas/meta.tscn" id="2_rw0dg"]
 [ext_resource type="PackedScene" uid="uid://017lmppfkhy3" path="res://escenas/trampa.tscn" id="6_vfey0"]
+[ext_resource type="Texture2D" uid="uid://bgemdxrqwo37y" path="res://assets/Backgrounds/sky.png" id="8_ga8es"]
+[ext_resource type="Texture2D" uid="uid://dfyipvjpuivn8" path="res://assets/Backgrounds/far_mountains.png" id="9_53h30"]
+[ext_resource type="Texture2D" uid="uid://ds3dcsqs0on8n" path="res://assets/Backgrounds/grassy_mountains.png" id="10_32uck"]
+[ext_resource type="Texture2D" uid="uid://c5jx3beh0dmud" path="res://assets/Backgrounds/clouds_mid.png" id="11_u0rw0"]
+[ext_resource type="Texture2D" uid="uid://c6jrtxa7ifiva" path="res://assets/Backgrounds/clouds_mid_t.png" id="12_7ha4l"]
+[ext_resource type="Texture2D" uid="uid://dmn0a505bo13w" path="res://assets/Backgrounds/hill.png" id="13_8igkm"]
+[ext_resource type="Texture2D" uid="uid://dqmxcyymsus5m" path="res://assets/Backgrounds/clouds_front.png" id="14_pumwm"]
+[ext_resource type="Texture2D" uid="uid://dftlliea81lj5" path="res://assets/Backgrounds/clouds_front_t.png" id="15_gfj5t"]
 
 [sub_resource type="Curve2D" id="Curve2D_0c3sb"]
 _data = {
@@ -171,6 +180,9 @@ point_count = 3
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_dbjcl")
 
+[node name="Meta" parent="." instance=ExtResource("2_rw0dg")]
+position = Vector2(82, 544)
+
 [node name="player" parent="." instance=ExtResource("2_o2x0u")]
 position = Vector2(209, 552)
 
@@ -210,5 +222,55 @@ rotates = false
 position = Vector2(0.00588226, 1.00003)
 rotation = -3.15783
 velocitat = 100
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(195, 106)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("8_ga8es")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(195, 106)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("9_53h30")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(195, 106)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource("10_32uck")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(195, 106)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+texture = ExtResource("11_u0rw0")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(195, 106)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+texture = ExtResource("12_7ha4l")
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(195, 106)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer8"]
+texture = ExtResource("13_8igkm")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(195, 106)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
+texture = ExtResource("14_pumwm")
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(195, 106)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
+texture = ExtResource("15_gfj5t")
 
 [connection signal="timeout" from="Path2D/PathFollow2D/dimoni/atac" to="." method="_on_atac_timeout"]

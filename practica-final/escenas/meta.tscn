@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6ofomjbbunw"]
+
+[ext_resource type="Script" path="res://scripts/meta.gd" id="1_1yf1h"]
+[ext_resource type="Texture2D" uid="uid://duf3ktbb2ky0n" path="res://assets/05 - Instruments/guitar_electric.png" id="2_i4leo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fmy4"]
+size = Vector2(43, 36)
+
+[node name="Meta" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_1yf1h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_i4leo")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.5, -1)
+shape = SubResource("RectangleShape2D_7fmy4")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
