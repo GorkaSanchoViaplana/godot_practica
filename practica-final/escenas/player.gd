@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -400.0
 #const GRAVITY = 981
 
 var viu: bool = true
+var pare = null
 var potAtacar1: bool = true
 var potAtacar2: bool = true
 var tipusAtac: int = 1 # 1 és un atac a distància, 2 és a melee
@@ -14,6 +15,7 @@ var velAtac1 = 300
 
 func _ready() -> void:
 	viu = true
+	pare = get_parent()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -46,7 +48,7 @@ func morir():
 	sprites.play("mor")
 	await sprites.animation_finished
 	VaraiablesGlobals.vides -= 1
-	# get_tree().reload_current_scene()
+	#pare.reload_current_scene()
 	#fer respawn?
 
 func _on_temps_atac_1_timeout() -> void:
