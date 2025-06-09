@@ -10,9 +10,16 @@ script = ExtResource("2_2n027")
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_u7pkc")
 
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-0.5, -1)
+
 [node name="distAtac" type="Timer" parent="." index="2"]
 wait_time = 0.5
 one_shot = true
 autostart = true
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="3"]
+position = Vector2(-4.76837e-07, -1)
+scale = Vector2(1.00374, 0.458697)
 
 [connection signal="timeout" from="distAtac" to="." method="_on_dist_atac_timeout"]

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://80euo61dxjhe" path="res://assets/projectile.png" id="2_6f50t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ylafj"]
-size = Vector2(38, 22)
+size = Vector2(19, 8)
 
 [node name="projectil" type="RigidBody2D"]
 gravity_scale = 0.0

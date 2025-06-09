@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://vb0fimnxpqmm"]
+
+[ext_resource type="Script" path="res://escenas/menu_victoria.gd" id="1_6mtpw"]
+[ext_resource type="FontFile" uid="uid://vws1sggg1t58" path="res://fonts/Kenney Mini Square Mono.ttf" id="1_dlmf6"]
+
+[node name="menu_victoria" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6mtpw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.8599, 16.0608)
+color = Color(5.58317e-06, 0.688329, 0.457756, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 79.0
+offset_right = 433.0
+offset_bottom = 102.0
+scale = Vector2(3.93118, 3.93118)
+theme_override_fonts/font = ExtResource("1_dlmf6")
+text = "Has Guanyat!!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 363.0
+offset_top = 459.0
+offset_right = 551.0
+offset_bottom = 519.0
+scale = Vector2(1.79825, 1.79825)
+
+[node name="botoTornarJugar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_dlmf6")
+text = "Tornar a Jugar!"
+
+[node name="botoSortir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_dlmf6")
+text = "Sortir"
+
+[connection signal="pressed" from="VBoxContainer/botoTornarJugar" to="." method="_on_boto_tornar_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/botoSortir" to="." method="_on_boto_sortir_pressed"]

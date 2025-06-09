@@ -3,7 +3,7 @@ class_name player extends CharacterBody2D
 @export var fletxa: PackedScene
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -350.0
 #const GRAVITY = 981
 
 var viu: bool = true
@@ -19,6 +19,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+	if not viu:
+		return
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		if velocity.y < 0:
@@ -44,18 +46,22 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func morir():
+	if not viu:
+		return
 	viu = false
 	sprites.play("mor")
 	await sprites.animation_finished
-	VaraiablesGlobals.vides -= 1
-	#pare.reload_current_scene()
+	VaraiablesGlobals.restarVida() 
+	if VaraiablesGlobals.vides > 0:
+		get_tree().reload_current_scene()
 	#fer respawn?
 
 func _on_temps_atac_1_timeout() -> void:
 	potAtacar1 = true
 
 func atacar() -> void:
-	
+	if not viu:
+		return
 	if tipusAtac == 1 and potAtacar1: # ATAC A DISTÀNCIA
 		print("ATACANT 1")
 		sprites.play("atac")

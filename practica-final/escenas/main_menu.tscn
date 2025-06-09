@@ -1,8 +1,11 @@
-[gd_scene format=3 uid="uid://cggmvphrvxt2n"]
+[gd_scene load_steps=2 format=3 uid="uid://cggmvphrvxt2n"]
+
+[ext_resource type="Script" path="res://escenas/main_menu.gd" id="1_13c4m"]
 
 [node name="mainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_13c4m")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -26,8 +29,8 @@ layout_mode = 0
 offset_left = 357.0
 offset_top = -2.0
 offset_right = 397.0
-offset_bottom = 38.0
-scale = Vector2(10.1554, 16.3861)
+offset_bottom = 37.0
+scale = Vector2(10.1979, 16.7078)
 color = Color(0.506668, 0.965197, 0.934111, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -49,3 +52,7 @@ text = "Opcions"
 [node name="botoSortir" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Sortir"
+
+[connection signal="pressed" from="VBoxContainer/botoJugar" to="." method="_on_boto_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotoOpcions" to="." method="_on_boto_opcions_pressed"]
+[connection signal="pressed" from="VBoxContainer/botoSortir" to="." method="_on_boto_sortir_pressed"]

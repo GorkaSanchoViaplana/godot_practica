@@ -1,8 +1,10 @@
 extends Node2D
 @onready var path_follow_1 : PathFollow2D = $Path2D/PathFollow2D
 @onready var path_follow_2 : PathFollow2D = $Path2D2/PathFollow2D
+@onready var path_follow_3 : PathFollow2D = $Path2D3/PathFollow2D
 @onready var dimoni_1 = $Path2D/PathFollow2D/dimoni
 @onready var fantasma_1 = $Path2D2/PathFollow2D/fantasma
+@onready var fantasma_2 = $Path2D3/PathFollow2D/fantasma
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -15,6 +17,13 @@ func _process(delta: float) -> void:
 		
 	if is_instance_valid(fantasma_1):
 		path_follow_2.progress += fantasma_1.velocitat * delta
+	if is_instance_valid(fantasma_2):
+		path_follow_3.progress += fantasma_2.velocitat * delta
 
 func _on_atac_timeout() -> void:
 	dimoni_1.disparar($player)
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is player:
+		body.morir()
