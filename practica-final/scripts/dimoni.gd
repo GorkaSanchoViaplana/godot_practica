@@ -6,12 +6,7 @@ extends "res://scripts/enemic.gd"
 var velAtac: float = 400.0
 
 
-#func _physics_process(delta: float) -> void:
-#	if not es_viu:
-#		return
-	#velocity.x = direccio * SPEED
-	#move_and_slide()
-#	sprites.play("caminar")
+
 
 func disparar(jug: CharacterBody2D):
 	if jug == null:

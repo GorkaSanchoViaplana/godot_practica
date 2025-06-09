@@ -215,7 +215,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="Trampa" parent="." instance=ExtResource("6_vfey0")]
-position = Vector2(650, 384)
+position = Vector2(649, 389)
 
 [node name="Trampa2" parent="." instance=ExtResource("6_vfey0")]
 position = Vector2(610, 193)
