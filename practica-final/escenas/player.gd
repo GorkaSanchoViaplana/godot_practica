@@ -63,7 +63,6 @@ func atacar() -> void:
 	if not viu:
 		return
 	if tipusAtac == 1 and potAtacar1: # ATAC A DISTÀNCIA
-		print("ATACANT 1")
 		sprites.play("atac")
 		var posRatoli = get_global_mouse_position()
 		var atac = fletxa.instantiate()
@@ -77,16 +76,18 @@ func atacar() -> void:
 		get_tree().current_scene.add_child(atac)
 		
 	elif tipusAtac == 2 and potAtacar2: # ATAC A MELEE
-		print("ATACANT 2")
 		sprites.play("melee")
 		$atacMelee.monitoring = true
 		$duracioAtac2.start()
 		
 	
 
-func canviarAtac(atac: int): # canvia a l'atac que correspon
-	pass
-	
+func canviarAtac(): # canvia a l'atac que correspon
+	if tipusAtac == 1:
+		tipusAtac = 2
+	else:
+		tipusAtac = 1
+	$SoCanvi.play()
 
 func _on_temps_atac_2_timeout() -> void:
 	potAtacar2 = true
@@ -100,3 +101,6 @@ func _on_atac_melee_body_entered(body: Node2D) -> void:
 	if body is not player:
 		if body is enemic and body.has_method("morir"):
 			body.morir()
+
+func _on_canvi_atac_timeout() -> void:
+	canviarAtac()

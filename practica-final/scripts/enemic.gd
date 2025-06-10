@@ -17,7 +17,6 @@ func _physics_process(delta: float) -> void:
 	
 
 func morir():
-	print("OOF")
 	es_viu = false;
 	sprites.play("morir")
 	await sprites.animation_finished

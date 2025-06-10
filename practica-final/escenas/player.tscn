@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://cic4ufau485n7"]
+[gd_scene load_steps=73 format=3 uid="uid://cic4ufau485n7"]
 
 [ext_resource type="Script" path="res://escenas/player.gd" id="1_6u430"]
 [ext_resource type="Texture2D" uid="uid://ctknw6qfk4xf" path="res://assets/01 - Main Character/pngs/Hobbit - attack1.png" id="2_di6go"]
@@ -68,6 +68,7 @@
 [ext_resource type="Texture2D" uid="uid://c8npwiytn4ion" path="res://assets/01 - Main Character/pngs/Hobbit - block11.png" id="44_b6nb5"]
 [ext_resource type="Texture2D" uid="uid://twduem77nvmv" path="res://assets/01 - Main Character/pngs/Hobbit - block12.png" id="45_neq5t"]
 [ext_resource type="Texture2D" uid="uid://d1v821wv3rbag" path="res://assets/01 - Main Character/pngs/Hobbit - block13.png" id="46_18mav"]
+[ext_resource type="AudioStream" uid="uid://bjer14x5msn5o" path="res://assets/soCanvi.wav" id="69_xjb5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbflx"]
 size = Vector2(15, 18.5954)
@@ -342,6 +343,14 @@ one_shot = true
 [node name="duracioAtac2" type="Timer" parent="."]
 one_shot = true
 
+[node name="canviAtac" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="SoCanvi" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("69_xjb5k")
+volume_db = -15.0
+
 [node name="atacMelee" type="Area2D" parent="."]
 monitoring = false
 
@@ -352,4 +361,5 @@ shape = SubResource("RectangleShape2D_arrll")
 [connection signal="timeout" from="tempsAtac1" to="." method="_on_temps_atac_1_timeout"]
 [connection signal="timeout" from="tempsAtac2" to="." method="_on_temps_atac_2_timeout"]
 [connection signal="timeout" from="duracioAtac2" to="." method="_on_duracio_atac_2_timeout"]
+[connection signal="timeout" from="canviAtac" to="." method="_on_canvi_atac_timeout"]
 [connection signal="body_entered" from="atacMelee" to="." method="_on_atac_melee_body_entered"]
