@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -350.0
 #const GRAVITY = 981
 
 var viu: bool = true
+var fent_animacio:bool = false
 var pare = null
 var potAtacar1: bool = true
 var potAtacar2: bool = true
@@ -23,9 +24,10 @@ func _physics_process(delta: float) -> void:
 		return
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		if velocity.y < 0:
+		if velocity.y < 0 and not fent_animacio:
 			sprites.play("jump")
-		elif velocity.y > 0:
+			#sprites.play("jump")
+		elif velocity.y > 0 and not fent_animacio:
 			sprites.play("fall")
 	# Handle jump.
 	elif Input.is_action_just_pressed("ui_salt"):
@@ -34,10 +36,11 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction * SPEED
 		sprites.flip_h = direction < 0
-		sprites.play("run");
+		if not fent_animacio:
+			sprites.play("run");
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		if viu:
+		if viu and not fent_animacio:
 			sprites.play("idle")
 	
 	if Input.is_action_just_pressed("ui_atac"):
@@ -63,6 +66,7 @@ func atacar() -> void:
 	if not viu:
 		return
 	if tipusAtac == 1 and potAtacar1: # ATAC A DISTÀNCIA
+		fent_animacio = true
 		sprites.play("atac")
 		var posRatoli = get_global_mouse_position()
 		var atac = fletxa.instantiate()
@@ -72,15 +76,16 @@ func atacar() -> void:
 		atac.rotation = direccio.angle()
 		potAtacar1 = false
 		$tempsAtac1.start()
-		
-		get_tree().current_scene.add_child(atac)
-		
+		get_tree().current_scene.add_child(atac) 
+		await sprites.animation_finished
+		fent_animacio = false
 	elif tipusAtac == 2 and potAtacar2: # ATAC A MELEE
+		fent_animacio = true
 		sprites.play("melee")
+		await sprites.animation_finished
+		fent_animacio = false
 		$atacMelee.monitoring = true
 		$duracioAtac2.start()
-		
-	
 
 func canviarAtac(): # canvia a l'atac que correspon
 	if tipusAtac == 1:
@@ -101,6 +106,13 @@ func _on_atac_melee_body_entered(body: Node2D) -> void:
 	if body is not player:
 		if body is enemic and body.has_method("morir"):
 			body.morir()
+		if body is projectil and body.has_method("destruir"):
+			body.destruir()
+
 
 func _on_canvi_atac_timeout() -> void:
 	canviarAtac()
+
+
+func _on_atac_melee_area_entered(area: Area2D) -> void:
+	pass

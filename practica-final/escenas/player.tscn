@@ -129,7 +129,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"atac",
-"speed": 16.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -233,7 +233,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"melee",
-"speed": 16.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -313,7 +313,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_arrll"]
-size = Vector2(29, 26)
+size = Vector2(44, 22)
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_6u430")
@@ -326,7 +326,7 @@ shape = SubResource("RectangleShape2D_fbflx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vwyct")
-animation = &"melee"
+animation = &"atac"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
@@ -355,11 +355,12 @@ volume_db = -15.0
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="atacMelee"]
-position = Vector2(4.5, -3)
+position = Vector2(6, -2)
 shape = SubResource("RectangleShape2D_arrll")
 
 [connection signal="timeout" from="tempsAtac1" to="." method="_on_temps_atac_1_timeout"]
 [connection signal="timeout" from="tempsAtac2" to="." method="_on_temps_atac_2_timeout"]
 [connection signal="timeout" from="duracioAtac2" to="." method="_on_duracio_atac_2_timeout"]
 [connection signal="timeout" from="canviAtac" to="." method="_on_canvi_atac_timeout"]
+[connection signal="area_entered" from="atacMelee" to="." method="_on_atac_melee_area_entered"]
 [connection signal="body_entered" from="atacMelee" to="." method="_on_atac_melee_body_entered"]
