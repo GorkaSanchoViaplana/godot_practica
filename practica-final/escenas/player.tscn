@@ -313,7 +313,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_arrll"]
-size = Vector2(44, 22)
+size = Vector2(42, 35)
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_6u430")
@@ -355,7 +355,7 @@ volume_db = -15.0
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="atacMelee"]
-position = Vector2(6, -2)
+position = Vector2(9, -7.5)
 shape = SubResource("RectangleShape2D_arrll")
 
 [connection signal="timeout" from="tempsAtac1" to="." method="_on_temps_atac_1_timeout"]

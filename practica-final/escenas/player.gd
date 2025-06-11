@@ -82,10 +82,10 @@ func atacar() -> void:
 	elif tipusAtac == 2 and potAtacar2: # ATAC A MELEE
 		fent_animacio = true
 		sprites.play("melee")
-		await sprites.animation_finished
-		fent_animacio = false
 		$atacMelee.monitoring = true
 		$duracioAtac2.start()
+		await sprites.animation_finished
+		fent_animacio = false
 
 func canviarAtac(): # canvia a l'atac que correspon
 	if tipusAtac == 1:
@@ -106,8 +106,6 @@ func _on_atac_melee_body_entered(body: Node2D) -> void:
 	if body is not player:
 		if body is enemic and body.has_method("morir"):
 			body.morir()
-		if body is projectil and body.has_method("destruir"):
-			body.destruir()
 
 
 func _on_canvi_atac_timeout() -> void:
@@ -115,4 +113,6 @@ func _on_canvi_atac_timeout() -> void:
 
 
 func _on_atac_melee_area_entered(area: Area2D) -> void:
-	pass
+	var pare_a = area.get_parent()
+	if pare_a is projectil:
+		pare_a.destruir()
