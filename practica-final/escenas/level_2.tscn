@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://deg2e755hy2vk"]
+[gd_scene load_steps=12 format=3 uid="uid://deg2e755hy2vk"]
 
 [ext_resource type="Texture2D" uid="uid://ottg5kjds4vx" path="res://Four Seasons Platformer Tileset [16x16][FREE] - RottingPixels/four-seasons-tileset.png" id="1_fm5s4"]
 [ext_resource type="PackedScene" uid="uid://dbv2nybbfoorg" path="res://escenas/hud.tscn" id="1_hesvh"]
 [ext_resource type="Texture2D" uid="uid://d3q6jyeaddo2x" path="res://assets/Backgrounds_2/sky.png" id="2_qunsl"]
+[ext_resource type="PackedScene" uid="uid://cic4ufau485n7" path="res://escenas/player.tscn" id="2_x64su"]
 [ext_resource type="Texture2D" uid="uid://dx5jruot02y8u" path="res://assets/Backgrounds_2/far-clouds.png" id="3_3rpl7"]
 [ext_resource type="Texture2D" uid="uid://man4c6rcqg7j" path="res://assets/Backgrounds_2/near-clouds.png" id="4_fovpu"]
 [ext_resource type="Texture2D" uid="uid://b5vix0o64vwe3" path="res://assets/Backgrounds_2/far-mountains.png" id="5_lpa0b"]
@@ -142,6 +143,7 @@ texture = ExtResource("1_fm5s4")
 8:13/0 = 0
 0:14/0 = 0
 1:14/0 = 0
+1:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:14/0 = 0
 3:14/0 = 0
 4:14/0 = 0
@@ -154,15 +156,17 @@ texture = ExtResource("1_fm5s4")
 3:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_imt63"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_xmtqt")
 
 [node name="level_2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(75, 363)
+position = Vector2(80, 363)
 tile_set = SubResource("TileSet_imt63")
 rendering_quadrant_size = 128
 format = 2
+layer_0/tile_data = PackedInt32Array(851963, 65536, 14, 851964, 65536, 14, 851965, 65536, 14, 851967, 65536, 14, 786432, 65536, 14, 851966, 65536, 14, 786433, 65536, 14, 786434, 65536, 14, 786435, 65536, 14, 720900, 65536, 14, 720901, 65536, 14, 720902, 65536, 14, 720903, 65536, 14, 720904, 65536, 14, 720905, 65536, 14, 720906, 65536, 14, 655371, 65536, 14, 655372, 65536, 14, 655373, 65536, 14, 655374, 65536, 14, 655375, 65536, 14, 655376, 65536, 14, 720913, 65536, 14, 720914, 65536, 14, 786451, 65536, 14, 786452, 65536, 14, 851989, 65536, 14, 851990, 65536, 14, 851991, 65536, 14, 851992, 65536, 14, 851993, 65536, 14, 851994, 65536, 14, 851995, 65536, 14, 851996, 65536, 14, 851997, 65536, 14, 851998, 65536, 14, 851999, 65536, 14, 852000, 65536, 14, 852001, 65536, 14, 852002, 65536, 14, 852003, 65536, 14, 852004, 65536, 14, 852005, 65536, 14, 852006, 65536, 14, 852013, 65536, 14, 852014, 65536, 14, 852015, 65536, 14, 852016, 65536, 14, 852017, 65536, 14, 852018, 65536, 14, 852019, 65536, 14, 852020, 65536, 14, 852021, 65536, 14, 852022, 65536, 14, 852023, 65536, 14, 852024, 65536, 14, 852025, 65536, 14, 852026, 65536, 14, 786490, 65536, 14, 720954, 65536, 14, 655418, 65536, 14, 589882, 65536, 14, 524346, 65536, 14, 458810, 65536, 14, 786480, 65536, 14, 655408, 65536, 14, 720944, 65536, 14, 655409, 65536, 14, 720945, 65536, 14, 786481, 65536, 14, 393268, 65536, 14, 458804, 65536, 14, 524340, 65536, 14, 589876, 65536, 14, 655412, 65536, 14, 720948, 65536, 14, 786484, 65536, 14, 458811, 65536, 14, 458812, 65536, 14, 458813, 65536, 14, 458814, 65536, 14, 458815, 65536, 14, 393280, 65536, 14, 327744, 65536, 14, 327745, 65536, 14, 327746, 65536, 14, 262210, 65536, 14, 851962, 65536, 14, 786426, 65536, 14, 720890, 65536, 14, 655354, 65536, 14, 589818, 65536, 14, 524282, 65536, 14, 458746, 65536, 14, 393210, 65536, 14)
 
 [node name="HUD" parent="." instance=ExtResource("1_hesvh")]
 
@@ -218,3 +222,6 @@ motion_mirroring = Vector2(99, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
 position = Vector2(82, 0)
 texture = ExtResource("7_jqtxu")
+
+[node name="player" parent="." instance=ExtResource("2_x64su")]
+position = Vector2(50, 543)
