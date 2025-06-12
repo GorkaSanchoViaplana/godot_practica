@@ -1,5 +1,5 @@
-extends "res://scripts/enemic.gd"
-
+#extends "res://scripts/enemic.gd"
+class_name dimoni extends enemic
 @export var foc: PackedScene
 
 # var jug: Node2D
