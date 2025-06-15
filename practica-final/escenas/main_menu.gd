@@ -4,6 +4,7 @@ var nivell = load("res://escenas/level_1.tscn")
 func _ready() -> void:
 	VaraiablesGlobals.vides = 3
 
+#Script molt simple
 
 func _on_boto_sortir_pressed() -> void:
 	get_tree().quit()

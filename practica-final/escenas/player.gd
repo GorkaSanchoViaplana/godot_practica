@@ -7,8 +7,8 @@ const JUMP_VELOCITY = -350.0
 #const GRAVITY = 981
 
 var viu: bool = true
-var fent_animacio:bool = false
-var pare = null
+var fent_animacio:bool = false #Per a evitar fer el idle cuan no toca
+var pare = null #per a saber la escena on som
 var potAtacar1: bool = true
 var potAtacar2: bool = true
 var tipusAtac: int = 1 # 1 és un atac a distància, 2 és a melee
@@ -18,7 +18,8 @@ func _ready() -> void:
 	viu = true
 	pare = get_parent()
 
-func _physics_process(delta: float) -> void:
+
+func _physics_process(delta: float) -> void: #Aixo es fa a cada frame
 	# Add the gravity.
 	if not viu:
 		return
@@ -48,19 +49,19 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
-func morir():
-	if not viu:
+func morir(): #es fa cuan mor
+	if not viu: #Per a evitar morir mes d'un cop i perdre mes vides de les que toca
 		return
 	viu = false
 	sprites.play("mor")
 	await sprites.animation_finished
 	VaraiablesGlobals.restarVida() 
-	if VaraiablesGlobals.vides > 0:
+	if VaraiablesGlobals.vides > 0: #Si arriba a 0 el metode restarVida ja ens porta a la pantalla final
 		get_tree().reload_current_scene()
 	#fer respawn?
 
 func _on_temps_atac_1_timeout() -> void:
-	potAtacar1 = true
+	potAtacar1 = true #Per a anar reiniciant els temps d'atac
 
 func atacar() -> void:
 	if not viu:
@@ -68,7 +69,7 @@ func atacar() -> void:
 	if tipusAtac == 1 and potAtacar1: # ATAC A DISTÀNCIA
 		fent_animacio = true
 		sprites.play("atac")
-		var posRatoli = get_global_mouse_position()
+		var posRatoli = get_global_mouse_position() 
 		var atac = fletxa.instantiate()
 		var direccio = (posRatoli - global_position).normalized()
 		atac.global_position = global_position
@@ -113,6 +114,6 @@ func _on_canvi_atac_timeout() -> void:
 
 
 func _on_atac_melee_area_entered(area: Area2D) -> void:
-	var pare_a = area.get_parent()
+	var pare_a = area.get_parent() #Ho hem de fer aixi perque sino no es poden detectar els projectils
 	if pare_a is projectil:
 		pare_a.destruir()

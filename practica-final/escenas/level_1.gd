@@ -12,14 +12,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	#Tots aquests if son per a evitar intentar moure enemics morts, cosa que crashea el joc
 	if is_instance_valid(dimoni_1):
 		path_follow_1.progress += dimoni_1.velocitat * delta
-		
 	if is_instance_valid(fantasma_1):
 		path_follow_2.progress += fantasma_1.velocitat * delta
 	if is_instance_valid(fantasma_2):
 		path_follow_3.progress += fantasma_2.velocitat * delta
 
+#Ho fem aqui ja que aixi en cada nivell podem modificar els atacs del enemic
 func _on_atac_timeout() -> void:
 	dimoni_1.disparar($player)
 

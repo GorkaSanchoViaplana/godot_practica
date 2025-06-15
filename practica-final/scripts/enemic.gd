@@ -17,6 +17,7 @@ func _physics_process(delta: float) -> void:
 	
 
 func morir():
+	#Fem el es_viu=false per a evitar que al physics_process es faci l'animacio de caminar
 	es_viu = false;
 	sprites.play("morir")
 	await sprites.animation_finished

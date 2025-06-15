@@ -3,4 +3,4 @@ extends CanvasLayer
 
 
 func _process(delta: float) -> void:
-	vides.text = "X %d" % VaraiablesGlobals.vides
+	vides.text = "X %d" % VaraiablesGlobals.vides #Tenim les vides a las variablesGlobals

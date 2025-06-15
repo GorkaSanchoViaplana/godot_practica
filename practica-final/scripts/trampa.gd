@@ -21,5 +21,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 
 func _on_area_atac_body_entered(body: Node2D) -> void:
+	#Important el monitoring del if per a evitar que sempre mati
 	if body is player and body.has_method("morir") and $areaAtac.monitoring:
 		body.morir()

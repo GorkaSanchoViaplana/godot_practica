@@ -1,14 +1,17 @@
 #extends "res://scripts/enemic.gd"
 class_name dimoni extends enemic
+#El foc es fa a la escena
 @export var foc: PackedScene
 
 # var jug: Node2D
+#Literalment es la velocitat del atac
 var velAtac: float = 400.0
 
 
 
 
 func disparar(jug: CharacterBody2D):
+	#Jug es jugador, ho fem per a evitar possibles problemes
 	if jug == null:
 		return
 	else:

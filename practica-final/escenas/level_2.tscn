@@ -287,7 +287,6 @@ rotation = -1.5827
 
 [node name="enemic" parent="Path2D2/PathFollow2D" instance=ExtResource("11_vqium")]
 rotation = 1.5708
-scale = Vector2(1, 1)
 
 [node name="atac2" type="Timer" parent="Path2D2/PathFollow2D"]
 wait_time = 2.0
