@@ -7,7 +7,9 @@ extends Node2D
 @onready var fantasma_2 = $Path2D3/PathFollow2D/fantasma
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var t = load("res://assets/05 - Instruments/guitar_electric.png")
 	$Meta.nivell = 1
+	$Meta.setTexture(t)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

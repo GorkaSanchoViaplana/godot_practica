@@ -1,5 +1,5 @@
 extends RigidBody2D
-# @export var instrument: Sprite2D
+@onready var instrument = $Sprite2D
 var victoria = load("res://escenas/menu_victoria.tscn")
 var nivell
 # Called when the node enters the scene tree for the first time.
@@ -7,6 +7,8 @@ func _ready() -> void:
 	pass
 	#$Sprite2D.texture = instrument.texture
 
+func setTexture(t) -> void:
+	instrument.texture = t
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
