@@ -15,10 +15,10 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is player:
+	if body is player: # aquesta solució ens serveix perquè només són tres nivells
 		if nivell == 1:
 			get_tree().change_scene_to_file("res://escenas/level_2.tscn")
 		elif nivell == 2:
-			pass # passarem al 3 més endavant
+			get_tree().change_scene_to_file("res://escenas/level_3.tscn")
 		else:
 			get_tree().change_scene_to_packed(victoria)

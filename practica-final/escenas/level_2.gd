@@ -8,7 +8,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var t = load("res://assets/05 - Instruments/trumpet.png")
-	$Meta.nivell = 3
+	$Meta.nivell = 2
 	$Meta.setTexture(t)
 
 
