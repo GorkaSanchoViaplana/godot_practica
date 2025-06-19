@@ -7,3 +7,6 @@ func restarVida()->void:
 	vides -= 1
 	if vides <=0:
 		get_tree().change_scene_to_packed(pantallaPerdre)
+
+func sumarVida()->void:
+	vides+=1

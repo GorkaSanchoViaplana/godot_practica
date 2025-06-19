@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is player: # aquesta solució ens serveix perquè només són tres nivells
+		VaraiablesGlobals.sumarVida()
 		if nivell == 1:
 			get_tree().change_scene_to_file("res://escenas/level_2.tscn")
 		elif nivell == 2:
