@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://deg2e755hy2vk"]
+[gd_scene load_steps=17 format=3 uid="uid://deg2e755hy2vk"]
 
 [ext_resource type="Texture2D" uid="uid://ottg5kjds4vx" path="res://Four Seasons Platformer Tileset [16x16][FREE] - RottingPixels/four-seasons-tileset.png" id="1_fm5s4"]
 [ext_resource type="PackedScene" uid="uid://dbv2nybbfoorg" path="res://escenas/hud.tscn" id="1_hesvh"]
 [ext_resource type="PackedScene" uid="uid://b6ofomjbbunw" path="res://escenas/meta.tscn" id="1_oj5dy"]
 [ext_resource type="Script" path="res://escenas/level_2.gd" id="1_sxqvl"]
 [ext_resource type="Texture2D" uid="uid://biw2avoiki5u8" path="res://assets/1.png" id="2_7tok0"]
+[ext_resource type="AudioStream" uid="uid://btv33lgr3xci5" path="res://assets/nivell2.ogg" id="2_k13nm"]
 [ext_resource type="PackedScene" uid="uid://cic4ufau485n7" path="res://escenas/player.tscn" id="2_x64su"]
 [ext_resource type="PackedScene" uid="uid://017lmppfkhy3" path="res://escenas/trampa.tscn" id="10_dgra4"]
 [ext_resource type="PackedScene" uid="uid://trf7grxp0awp" path="res://escenas/dimoni.tscn" id="11_vqium"]
@@ -190,6 +191,10 @@ point_count = 4
 
 [node name="level_2" type="Node2D"]
 script = ExtResource("1_sxqvl")
+
+[node name="musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_k13nm")
+autoplay = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1292, 264)

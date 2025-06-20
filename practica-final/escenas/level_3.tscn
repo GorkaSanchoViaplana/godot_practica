@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5hoqgqqgeuu5"]
+[gd_scene load_steps=15 format=3 uid="uid://c5hoqgqqgeuu5"]
 
 [ext_resource type="PackedScene" uid="uid://cic4ufau485n7" path="res://escenas/player.tscn" id="1_46ypy"]
 [ext_resource type="PackedScene" uid="uid://b6ofomjbbunw" path="res://escenas/meta.tscn" id="1_atxeu"]
 [ext_resource type="Script" path="res://escenas/level_3.gd" id="1_oo8bx"]
 [ext_resource type="Texture2D" uid="uid://ottg5kjds4vx" path="res://Four Seasons Platformer Tileset [16x16][FREE] - RottingPixels/four-seasons-tileset.png" id="2_ap6br"]
+[ext_resource type="AudioStream" uid="uid://08t5ofpru0dj" path="res://assets/nivell3.ogg" id="2_oj54j"]
 [ext_resource type="PackedScene" uid="uid://017lmppfkhy3" path="res://escenas/trampa.tscn" id="2_vi0ps"]
 [ext_resource type="PackedScene" uid="uid://dbv2nybbfoorg" path="res://escenas/hud.tscn" id="6_on1mp"]
 [ext_resource type="Texture2D" uid="uid://47r8l1qcmavo" path="res://assets/Level 3 parallax/1.png" id="7_5x7nr"]
@@ -166,6 +167,11 @@ size = Vector2(893, 20)
 [node name="level_3" type="Node2D"]
 script = ExtResource("1_oo8bx")
 
+[node name="musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_oj54j")
+volume_db = -20.0
+autoplay = true
+
 [node name="Trampa2" parent="." instance=ExtResource("2_vi0ps")]
 position = Vector2(601, 171)
 
@@ -173,7 +179,7 @@ position = Vector2(601, 171)
 position = Vector2(23, 151)
 
 [node name="Trampa" parent="." instance=ExtResource("2_vi0ps")]
-position = Vector2(310, 139)
+position = Vector2(315, 139)
 rotation = 1.5708
 
 [node name="Meta" parent="." instance=ExtResource("1_atxeu")]
