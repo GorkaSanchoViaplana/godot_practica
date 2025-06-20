@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cggmvphrvxt2n"]
+[gd_scene load_steps=9 format=3 uid="uid://cggmvphrvxt2n"]
 
 [ext_resource type="Script" path="res://escenas/main_menu.gd" id="1_13c4m"]
 [ext_resource type="Texture2D" uid="uid://utv3cfscp2au" path="res://assets/menu/1.png" id="2_pifsp"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d2snda4ifgsds" path="res://assets/menu/4.png" id="5_rt2fl"]
 [ext_resource type="Texture2D" uid="uid://bbst70qejsimt" path="res://assets/menu/5.png" id="6_8cxb1"]
 [ext_resource type="Texture2D" uid="uid://bwven70sj4rol" path="res://assets/menu/6.png" id="7_aclpl"]
+[ext_resource type="FontFile" uid="uid://vws1sggg1t58" path="res://fonts/Kenney Mini Square Mono.ttf" id="8_wtqa8"]
 
 [node name="mainMenu" type="Control"]
 layout_mode = 3
@@ -58,6 +59,16 @@ text = "Jugar"
 [node name="botoSortir" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Sortir"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 43.0
+offset_right = 185.0
+offset_bottom = 66.0
+scale = Vector2(3.72279, 3.72279)
+theme_override_fonts/font = ExtResource("8_wtqa8")
+text = "Beats and Jumps"
 
 [connection signal="pressed" from="VBoxContainer/botoJugar" to="." method="_on_boto_jugar_pressed"]
 [connection signal="pressed" from="VBoxContainer/botoSortir" to="." method="_on_boto_sortir_pressed"]
