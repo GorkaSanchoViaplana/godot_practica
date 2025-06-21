@@ -10,10 +10,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
+#Metode simple que et torna al menu principal
 func _on_boto_tornar_jugar_pressed() -> void:
 	get_tree().change_scene_to_packed(menuPrincipal)
 
-
+#Metode simple que et surt del joc
 func _on_boto_sortir_pressed() -> void:
 	get_tree().quit()

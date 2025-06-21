@@ -6,13 +6,12 @@ func _ready() -> void:
 	sprites.play("idle")
 	$areaAtac.monitoring = false
 
-
-
-
+#Activem hitbox i fem la animacio. 
 func _on_atac_timeout() -> void:
 	sprites.play("atac")
 	$areaAtac.monitoring = true
 
+#Si ataquem activem el timer i desactivem el monitoring
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if sprites.animation == "atac":
 		sprites.play("idle")

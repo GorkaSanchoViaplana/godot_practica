@@ -95,24 +95,27 @@ func canviarAtac(): # canvia a l'atac que correspon
 		tipusAtac = 1
 	$SoCanvi.play()
 
+#Reinicia el atac 2
 func _on_temps_atac_2_timeout() -> void:
 	potAtacar2 = true
 
+#Activem la hitbox del atac_2
 func _on_duracio_atac_2_timeout() -> void:
 	$atacMelee.monitoring = false
 	potAtacar2 = false
 	$tempsAtac2.start()
 
+#Detectem si algo esta dins de la hitbox d'atac_2 i ho tractem
 func _on_atac_melee_body_entered(body: Node2D) -> void:
 	if body is not player:
 		if body is enemic and body.has_method("morir"):
 			body.morir()
 
-
+#Aqui anem fent els canvis d'atac
 func _on_canvi_atac_timeout() -> void:
 	canviarAtac()
 
-
+#Aqui fem el tema de destruccio de projectil ja que no podem fer-ho amb el body
 func _on_atac_melee_area_entered(area: Area2D) -> void:
 	var pare_a = area.get_parent() #Ho hem de fer aixi perque sino no es poden detectar els projectils
 	if pare_a is projectil:

@@ -7,6 +7,7 @@ func _ready() -> void:
 	pass
 	#$Sprite2D.texture = instrument.texture
 
+#Aixo es perque les diferents textures les carreguem al nivell
 func setTexture(t) -> void:
 	instrument.texture = t
 
